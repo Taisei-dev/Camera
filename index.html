@@ -1,1 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webcamera</title>
+</head>
+<body>
+    <video　id="video" width=100% height=100% autoplay></video>
+    <button id="button">●</button>
+    <canvas id="canvas"></canvas>
+    <script>
+        var video=document.querySelector('#video');
+        navigator.mediaDevices.getUserMedia({
+            audio: false,
+            video:{
+                width: 1920,
+                height: 1080,
+                facingMode: 'environment'
+            }
+        })
+        .then(stream=>{
+            video.srcObject=stream;
+        })
+        .catch(err=>{
+            alert('Camera not allowed');
+        });
+        var button=document.querySelector('#button');
+        var canvas=document.querySelector('#canvas');
+        button.addEventListener('click',()=>{
+            const ctx=canvas.getContext('2d');
+            video.pause();
+            setTimeout(()=>{video.play();},500);
+            ctx.drawImage(video,0,0,canvas.width,canvas.height);
+        });
+    </script>
+    <style>
 
+    </style>
+</body>
+</html>
