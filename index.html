@@ -15,8 +15,8 @@
         navigator.mediaDevices.getUserMedia({
             audio: false,
             video:{
-                width: 1920,
-                height: 1080,
+                width: 3264,
+                height: 2448,
                 facingMode: "environment"
             }
         })
@@ -25,8 +25,8 @@
             video.srcObject = stream;
             video.onloadedmetadata = (e) => {
                 video.play();
-                canvas.setAttribute( "width" , 1920 );
-                canvas.setAttribute( "height" , 1080 );
+                canvas.setAttribute( "width" , 3264 );
+                canvas.setAttribute( "height" , 2448 );
 
             };
         })
