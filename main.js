@@ -2,7 +2,11 @@ var fs = require('fs'),
     http = require('http');
 
 http.createServer(function (req, res) {
-  fs.readFile(__dirname + req.url, function (err,data) {
+  var path=req.url;
+  if(path==='/'){
+    path='/index.html';
+  }
+  fs.readFile(__dirname + path, function (err,data) {
     if (err) {
       res.writeHead(404);
       res.end(JSON.stringify(err));
