@@ -32,6 +32,7 @@
         var button=document.querySelector('#button');
         var canvas=document.querySelector('#canvas');
         button.addEventListener('click',()=>{
+            var video=document.querySelector('#camera');
             const ctx=canvas.getContext('2d');
             video.pause();
             setTimeout(()=>{video.play();},500);
