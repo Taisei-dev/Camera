@@ -7,11 +7,12 @@
     <title>Webcamera</title>
 </head>
 <body>
-    <video　id="video" width="100%" height="100%" autoplay></video>
+    <h1>a</h1>
+    <video　id="camera" width="300" height="200" autoplay></video>
     <button id="button">●</button>
     <canvas id="canvas"></canvas>
     <script>
-        var video=document.querySelector('#video');
+        var video=document.querySelector('#camera');
         navigator.mediaDevices.getUserMedia({
             audio: false,
             video:{
