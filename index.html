@@ -43,6 +43,7 @@
             ctx.drawImage(video,0,0,canvas.width,canvas.height);
             var img=document.createElement('img');
             img.src=canvas.toDataURL('image/png');
+            img.style.display='fl'
             document.querySelector('#images-wrap').appendChild(img);
         };
     </script>
@@ -56,11 +57,17 @@
             display: none;
         }
         #button{
+            top: 50%;
+            padding-right: 0%;
             z-index: 1;
         }
         #images-wrap{
+            display:flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
             z-index: 2;
-            height: 5%;
+            max-height: 5%;
             max-width: 100%;
             overflow-x: scroll;
         }
