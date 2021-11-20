@@ -44,6 +44,9 @@
             var img=document.createElement('img');
             img.src=canvas.toDataURL('image/png');
             img.setAttribute('flex-shrink',1);
+            img.style.width='5%';
+            img.style.height='5%';
+            img.style.padding='1px';
             document.querySelector('#images-wrap').appendChild(img);
         };
     </script>
