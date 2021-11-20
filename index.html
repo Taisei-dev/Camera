@@ -25,6 +25,8 @@
             video.srcObject = stream;
             video.onloadedmetadata = (e) => {
                 video.play();
+                document.querySelector('#cavas').width=video.width;
+                document.querySelector('#cavas').height=video.height;
             };
         })
         .catch((err)=>{
