@@ -32,7 +32,7 @@
         });
         var button=document.querySelector('#button');
         var canvas=document.querySelector('#canvas');
-        button.addEventListener('click',()=>{
+        button.onclick=()=>{
             var video=document.querySelector('#camera');
             const ctx=canvas.getContext('2d');
             video.pause();
@@ -41,7 +41,7 @@
             var img=document.createElement('img');
             img.src=canvas.toDataURL('image/png');
             document.querySelector('#images-wrap').appendChild(img);
-        });
+        };
     </script>
     <style>
         #camera{
