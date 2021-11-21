@@ -7,8 +7,10 @@
     <title>Webcamera</title>
 </head>
 <body>
-    <video id="camera" playsinline autoplay muted></video>
-    <img id="button" src="./D8FBA969-063C-4EF2-A31C-6055EFB7DC56.png">
+    <div id="wrap">
+        <video id="camera" playsinline autoplay muted></video>
+        <img id="button" src="./D8FBA969-063C-4EF2-A31C-6055EFB7DC56.png">
+    </div>
     <div id="images-wrap"></div>
     <canvas id="canvas"></canvas>
     <script>
@@ -51,7 +53,11 @@
         };
     </script>
     <style>
+        #wrap{
+            position: relative;
+        }
         #camera{
+            position: absolute;
             z-index: 0;
             width: 95vw;
             height: 95vh;
@@ -63,9 +69,9 @@
             position: absolute;
             width: min(10vh,10vw);
             height: min(10vh,10vw);
-            top: 50vh;
-            margin-left: auto;
-            margin-right: 0px;
+            top: 50%;
+            left: auto;
+            right: 0px;
             z-index: 1;
         }
         #images-wrap{
